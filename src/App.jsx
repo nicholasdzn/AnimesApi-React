@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import SearchBar from './components/SearchBar';
 import Loading from './components/Loading';
 import AnimeCard from './components/AnimeCard';
+import Header from './components/Header';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,12 +29,14 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className=''>
         <SearchBar onSearch={handleSearch} />
+        {status === "200" && <h1 className='font-bold text-3xl text-center mt-2'>Animes</h1>}
         {status === "loading" && (
           <Loading />
         )}
-        <div className='flex flex-col gap-3'>
+        <div className='gallery-container mt-3 pb-10'>
           {status === "200" && apiData.map((item, index) => (
             <AnimeCard className='' key={index} title={item.title} img={item.images.jpg.image_url} genre={item.type} eps={item.episodes} url={item.url} score={item.score} />
           ))}

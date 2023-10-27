@@ -13,14 +13,14 @@ const SearchBar = ({ onSearch }) => {
     }
 
     return (
-        <div className='flex flex-row justify-start'>
+        <div className='flex justify-center pt-4'>
             <input type="text"
                 onChange={handleInputValue}
                 value={inputText}
-                placeholder='digite o nome de algum anime'
-                className='p-3'
+                placeholder='Digite o nome de algum anime'
+                className='p-3 w-96 border rounded-l-md'
             />
-            <button className='bg-slate-900 p-3' onClick={handleSearch}>Buscar</button>
+            <button className='bg-violet-900 rounded-r-md text-white p-3' onClick={handleSearch}>Buscar</button>
         </div>
     )
 }
