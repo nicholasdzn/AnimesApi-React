@@ -13,7 +13,7 @@ function App() {
 
   const fetchAnimes = async (query) => {
     try {
-      const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}&limit=20&order_by=popularity&sort=asc`).then(response => { setApiData(response.data.data) });
+      const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}&limit=20`).then(response => { setApiData(response.data.data) });
       setStatus("200")
     } catch (error) {
       console.log(error);
