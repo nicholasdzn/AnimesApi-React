@@ -27,7 +27,16 @@ body {
 }
 
 .anime-img {
-    width: 225px;
     height: 347px;
-    object-fit: fill;
+    object-fit: cover;
+}
+
+@media(max-width: 465px) {
+    .header h1 {
+        display: none;
+    }
+
+    .header {
+        justify-content: center;
+    }
 }

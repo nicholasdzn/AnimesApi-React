@@ -18,7 +18,7 @@ const SearchBar = ({ onSearch }) => {
                 onChange={handleInputValue}
                 value={inputText}
                 placeholder='Digite o nome de algum anime'
-                className='p-3 w-96 border rounded-l-md'
+                className='p-3 border rounded-l-md md:w-96 w-30'
             />
             <button className='bg-violet-900 rounded-r-md text-white p-3' onClick={handleSearch}>Buscar</button>
         </div>
