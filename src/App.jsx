@@ -7,9 +7,11 @@ import AnimeCard from './components/AnimeCard';
 import Header from './components/Header';
 
 function App() {
+
   const [searchQuery, setSearchQuery] = useState("");
   const [apiData, setApiData] = useState([]);
   const [status, setStatus] = useState("");
+  const [mainViewData, setMainViewData] = useState([]);
 
   const fetchAnimes = async (query) => {
     try {
@@ -26,16 +28,25 @@ function App() {
     fetchAnimes(query);
   }, [fetchAnimes]);
 
+  const handleClick = () => {
+    setApiData([]);
+  }
 
   return (
     <>
-      <Header />
+      <Header onclick={handleClick}/>
       <div className=''>
         <SearchBar onSearch={handleSearch} />
+        <div className='gallery-container mt-3 pb-10'></div>
+
+
+
+
         {status === "200" && <h1 className='font-bold text-3xl text-center mt-2'>Animes</h1>}
         {status === "loading" && (
           <Loading />
         )}
+        
         <div className='gallery-container mt-3 pb-10'>
           {status === "200" && apiData.map((item, index) => (
             <AnimeCard className='' key={index} title={item.title} img={item.images.jpg.image_url} genre={item.type} eps={item.episodes} url={item.url} score={item.score} />
