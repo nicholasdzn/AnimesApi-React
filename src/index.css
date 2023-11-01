@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: rgb(167 139 250);
+    background-color: rgb(47 47 47);
 }
 
 .gallery-container {
@@ -39,4 +39,24 @@ body {
     .header {
         justify-content: center;
     }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-number {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-number.active, 
+.page-number:hover {
+    background-color: #ddd;
 }
