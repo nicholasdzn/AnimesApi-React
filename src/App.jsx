@@ -38,7 +38,7 @@ function App() {
 
   const handleClick = () => {
     setStatus('Loading Main Page');
-    setResponseData = fetchTopAnimes();
+    setResponseData(fetchTopAnimes());
     setStatus('Main Page');
   }
 
