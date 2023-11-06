@@ -1,0 +1,11 @@
+.logo-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.logo-button img {
+    width: 50px; /* ou o tamanho que você deseja para a logo */
+    height: auto;
+}
